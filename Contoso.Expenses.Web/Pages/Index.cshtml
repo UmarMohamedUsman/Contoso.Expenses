@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@{
+    ViewBag.Title = "Contoso Expenses";
+}
+<img src="~/images/Expenses.jpg" alt="Expenses" />
+<span style="font-size:xx-large">Helping you track your Expenses!</span>
+<br /><br /><br />
+<div class="row">
+    <div class="col-md-4">
+        <h2><a asp-page="/Expenses/Index">Expenses</a></h2>
+        <ul>
+            <li>Submit Expenses within 30 days</li>
+            <li>Avoid Credit Card Late Fees</li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h2>We are</h2>
+        <ul>
+            <li>Contoso Expenses</li>
+            <li>Help you keep track of expenses</li>
+        </ul>
+    </div>
+</div>

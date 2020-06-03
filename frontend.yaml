@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contoso-expenses-web-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: contoso-expenses-web
+  template:
+    metadata:
+      labels:
+        app: contoso-expenses-web
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics-text"
+        prometheus.io/port: "80"
+        prometheus.io/scheme: "http"
+    spec:
+      containers:
+      - name: contosoexpensesweb
+        image: umaracr.azurecr.io/contosoexpensesweb:v1
+        ports:
+        - containerPort: 80  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: contoso-expenses-web-svc
+  labels:
+    app: contosoexpenseswebsvc
+spec:
+  type: LoadBalancer
+  selector:
+    app: contoso-expenses-web
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80

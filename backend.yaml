@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contoso-expenses-api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: contoso-expenses-api
+  template:
+    metadata:
+      labels:
+        app: contoso-expenses-api
+    spec:
+      containers:
+      - name: contosoexpensesapi
+        image: umaracr.azurecr.io/contosoexpensesapi:v2
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: contoso-expenses-api-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: contoso-expenses-api
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 80
