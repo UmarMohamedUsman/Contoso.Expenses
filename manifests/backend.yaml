@@ -17,6 +17,9 @@ spec:
         image: umaracr.azurecr.io/contosoexpensesapi:v2
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: umaracr-secret
+ 
 ---
 apiVersion: v1
 kind: Service

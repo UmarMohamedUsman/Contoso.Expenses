@@ -13,6 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Expenses.API", "Con
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5889EEE-0D73-403E-8E11-EF21A5216F22}"
 	ProjectSection(SolutionItems) = preProject
+		acr-integration.ps1 = acr-integration.ps1
 		manifests\backend.yaml = manifests\backend.yaml
 		manifests\frontend.yaml = manifests\frontend.yaml
 	EndProjectSection
