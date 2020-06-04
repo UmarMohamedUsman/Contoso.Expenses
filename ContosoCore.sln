@@ -11,10 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Expenses.Common", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Expenses.API", "Contoso.Expenses.API\Contoso.Expenses.API.csproj", "{AA6FD5A7-40BF-45B1-AE9C-51C376E25EA1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{4F5E63B7-C3CD-425C-A932-69F3DBC911CE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5889EEE-0D73-403E-8E11-EF21A5216F22}"
 	ProjectSection(SolutionItems) = preProject
-		backend.yaml = backend.yaml
-		frontend.yaml = frontend.yaml
+		manifests\backend.yaml = manifests\backend.yaml
+		manifests\frontend.yaml = manifests\frontend.yaml
 	EndProjectSection
 EndProject
 Global
